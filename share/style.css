@@ -1,0 +1,332 @@
+:root {
+    --primary-color: #6C63FF; /* A vibrant purple/blue */
+    --secondary-color: #607D8B; /* A slate grey */
+    --text-color: #333;
+    --light-text-color: #f4f4f4;
+    --background-color: #f9f9f9;
+    --card-background: #ffffff;
+    --border-color: #e0e0e0;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --font-family: 'Poppins', sans-serif;
+    --border-radius: 8px;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --transition-speed: 0.3s ease;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+/* Header */
+.app-header {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.app-header h1 {
+    margin: 0;
+    font-size: 2.8em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-header .logo-icon {
+    font-size: 1.2em; /* Adjust icon size relative to text */
+    margin-right: 10px;
+}
+
+.app-header .tagline {
+    font-size: 1.1em;
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
+/* Main Content */
+main {
+    flex-grow: 1; /* Allows main content to take up available space */
+}
+
+.card {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid var(--border-color);
+}
+
+.card h2 {
+    color: var(--primary-color);
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    display: inline-block; /* To make border-bottom fit content */
+}
+
+/* Form Elements & Buttons */
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.input-field {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    color: var(--text-color);
+    transition: border-color var(--transition-speed);
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+}
+
+.text-area {
+    width: 100%;
+    min-height: 120px;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    color: var(--text-color);
+    resize: vertical;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    transition: border-color var(--transition-speed);
+}
+
+.text-area:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+}
+
+.text-area.received {
+    background-color: #f0f4f8; /* Light blueish tint for received area */
+    border-color: #c0d0e0;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform 0.1s ease;
+    white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+}
+
+.btn-primary:hover {
+    background-color: #5a54e6; /* Slightly darker */
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+}
+
+.btn-secondary:hover {
+    background-color: #546e7a; /* Slightly darker */
+}
+
+.btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    font-size: 1.2em;
+    padding: 5px 8px;
+    cursor: pointer;
+    transition: color var(--transition-speed);
+}
+
+.btn-icon:hover {
+    color: var(--primary-color);
+}
+
+/* ID Display Group */
+.id-display-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.id-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 10px 15px;
+    font-family: monospace;
+    font-size: 1.1em;
+    color: var(--text-color);
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+#peerIdDisplay {
+    flex-grow: 1;
+    min-width: 0; /* Allows text to shrink */
+}
+
+#copyIdBtn, #copyReceivedBtn {
+    margin-left: 10px;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+    font-size: 1.5em; /* Make copy icon larger */
+}
+
+/* Status Messages */
+.status-message {
+    text-align: center;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    margin-top: 20px;
+    font-weight: 600;
+    color: var(--text-color); /* Default */
+}
+
+.status-message.connecting {
+    color: var(--secondary-color);
+}
+
+.status-message.connected {
+    color: var(--success-color);
+}
+
+.status-message.error {
+    color: var(--error-color);
+}
+
+.help-text {
+    font-size: 0.9em;
+    color: #777;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Footer */
+.app-footer {
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+.app-footer p {
+    margin: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .app-header h1 {
+        font-size: 2em;
+    }
+
+    .app-header .tagline {
+        font-size: 1em;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card h2 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .input-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn {
+        width: 100%; /* Full width buttons on small screens */
+    }
+
+    .id-wrapper {
+        flex-wrap: wrap; /* Allow ID and copy button to wrap if ID is too long */
+        justify-content: center;
+    }
+
+    #copyIdBtn, #copyReceivedBtn {
+        margin-left: 0;
+        margin-top: 10px; /* Add space when wrapped */
+        width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-header h1 {
+        font-size: 1.8em;
+    }
+
+    .app-header .logo-icon {
+        font-size: 1em;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+}
+
+/* General utility classes */
+.hidden {
+    display: none !important;
+}

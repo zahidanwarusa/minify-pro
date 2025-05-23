@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P2P SynchroShare - Instant Text Sharing</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236C63FF'%3E%3Cpath d='M16 1h-4l-4 4v18h12v-18l-4-4zm-2 15h-4v-2h4v2zm0-4h-4v-2h4v2zm0-4h-4v-2h4v2zm0-4h-4v-2h4v2z'/%3E%3C/svg%3E" type="image/svg+xml">
+</head>
+<body>
+    <header class="app-header">
+        <div class="container">
+            <h1><span class="logo-icon">🔗</span> SynchroShare</h1>
+            <p class="tagline">Instant client-to-client text sharing</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card connection-section">
+            <h2>Your Connection ID</h2>
+            <div class="id-display-group">
+                <button id="generateIdBtn" class="btn btn-primary">Generate My ID</button>
+                <div class="id-wrapper">
+                    <span id="peerIdDisplay">Not generated yet.</span>
+                    <button id="copyIdBtn" class="btn btn-icon" title="Copy ID to clipboard"><i class="fas fa-copy"></i></button>
+                </div>
+            </div>
+            <p class="help-text">Share this unique ID with the person you want to connect with.</p>
+        </section>
+
+        <section class="card connection-section">
+            <h2>Connect to Another Peer</h2>
+            <div class="input-group">
+                <input type="text" id="connectionIdInput" placeholder="Enter other person's ID" class="input-field">
+                <button id="connectBtn" class="btn btn-secondary">Connect</button>
+            </div>
+            <p class="status-message" id="status">Status: Disconnected</p>
+        </section>
+
+        <section class="card text-sharing-section">
+            <h2>Share Text</h2>
+            <textarea id="outgoingText" class="text-area" placeholder="Type text to send..."></textarea>
+            <button id="sendTextBtn" class="btn btn-primary" disabled>Send Text</button>
+            
+            <h3>Received Text:</h3>
+            <textarea id="receivedText" class="text-area received" readonly placeholder="Received text will appear here."></textarea>
+            <button id="copyReceivedBtn" class="btn btn-icon" title="Copy received text to clipboard"><i class="fas fa-copy"></i></button>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> SynchroShare. Powered by WebRTC & PeerJS.</p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
