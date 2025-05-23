@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Minify/Unminify Tool</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Code Minify/Unminify Tool</h1>
+            <p>Minify your code to reduce size or unminify to restore formatting</p>
+        </header>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="section-header">
+                    <h2>Input</h2>
+                    <div class="controls">
+                        <button id="clearInput" class="btn btn-secondary">Clear</button>
+                        <button id="pasteBtn" class="btn btn-secondary">Paste</button>
+                    </div>
+                </div>
+                <textarea id="inputText" placeholder="Paste your code or text here..."></textarea>
+            </div>
+
+            <div class="action-buttons">
+                <button id="minifyBtn" class="btn btn-primary">
+                    <span class="btn-icon">⬇</span>
+                    Minify
+                </button>
+                <button id="unminifyBtn" class="btn btn-primary">
+                    <span class="btn-icon">⬆</span>
+                    Unminify
+                </button>
+                <button id="swapBtn" class="btn btn-secondary">
+                    <span class="btn-icon">⇄</span>
+                    Swap
+                </button>
+            </div>
+
+            <div class="output-section">
+                <div class="section-header">
+                    <h2>Output</h2>
+                    <div class="controls">
+                        <button id="copyBtn" class="btn btn-secondary">Copy</button>
+                        <button id="clearOutput" class="btn btn-secondary">Clear</button>
+                    </div>
+                </div>
+                <textarea id="outputText" placeholder="Processed text will appear here..." readonly></textarea>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-label">Input Size:</span>
+                <span id="inputSize">0 characters</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Output Size:</span>
+                <span id="outputSize">0 characters</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Reduction:</span>
+                <span id="reduction">0%</span>
+            </div>
+        </div>
+
+        <footer>
+            <p>Client-side processing - your data stays private</p>
+        </footer>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>
